@@ -8,7 +8,7 @@
 </head>
 <body>
 <p>
-Thank you for signing up, <%=request.getParameter("firstName") %> <%=request.getParameter("lastName") %>. You have signed up for <%=request.getParameter("class") %>. Your email is <%=request.getParameter("email") %>. Your password is <%=request.getParameter("password1") %>.
+Thank you for signing up, <%=request.getParameter("firstName") %> <%=request.getParameter("lastName") %>. Your email is <%=request.getParameter("memberEmail") %>. Your password is <%=request.getParameter("password1") %>.
 </p>
 </body>
 </html>
