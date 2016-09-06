@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Lab 21/22</title>
+        <link rel="stylesheet" href="css/style.css">
+  </head>
+  <style>
+  body {
+  background-color: lightblue;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid black;
+    background-color: #00ccff;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: flex;
+    color: #282227;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #ccccff;
+}
+
+li a.active {
+    color: white;
+    background-color: #9999ff;
+}
+
+label.fieldLabel input {
+  position: absolute;
+  left: 300px;
+}
+
+label.fieldLabel {
+  display: block;
+  padding-bottom: 1 em;
+  margin-bottom: 4px;
+  position: relative;
+  left: 40 px;
+  overflow: visible;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  color: ;
+}
+
+div.buttons {
+  text-align: center;
+  margin-top: 5px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+}
+
+th {
+    text-align: left;
+}
+
+table {
+    border-spacing: 5px;
+}
+
+h1 {
+  font-family: Arial;
+  font-size: 2em;
+  color: blue;
+}
+
+h2 {
+  font-family: Arial;
+  font-size: 1.50em;
+}
+
+h3 {
+  font-family: Arial;
+  font-size: 1.5em;
+}
+
+select {
+  font-size: 1em;
+  color: purple;
+}
+  </style>
+  <body>
+    <script language = "JavaScript">
+  function validateForm(){
+    return validateEmail() && validatePassword() && validateFirstName() && validateLastName() && validatePhone;
+  }
+  function validateEmail()
+  {
+    var email= document.logon.memberEmail.value;
+    if (email === null || email ===""){
+      alert ("Email cannot be blank");
+      return false; 
+    }
+    email = email.trim();
+    if (email.indexOf("@") <= 0) {
+      alert ("Email must contain an @");
+      return false;
+    }
+    if (email.lastIndexOf(".") >= email.length  - 2) {
+      alert ("Email must have a .");
+      return false;
+  	}
+    if (email.lastIndexOf(".") < email.indexOf("@")) {
+      alert ("Email . must be after @");
+      return false;
+    }
+    return true;
+  }
+  
+    function validateFirstName()
+  {
+    var firstName= document.logon.firstName.value;
+    if (firstName === null || firstName ===""){
+      alert ("First Name cannot be blank");
+      return false; 
+    }
+    firstName = firstName.trim();
+    if (firstName.indexOf("0")> 0 || firstName.indexOf("1")> 0 || firstName.indexOf("2")> 0 || firstName.indexOf("3")> 0 || firstName.indexOf("4")> 0 || firstName.indexOf("5")> 0 || firstName.indexOf("6")> 0 || firstName.indexOf("7")> 0 || firstName.indexOf("8")> 0 || firstName.indexOf("9")> 0 || firstName.indexOf("!")> 0 || firstName.indexOf("@")> 0 || firstName.indexOf("#")> 0 || firstName.indexOf("$")> 0 || firstName.indexOf("$")> 0 || firstName.indexOf("%")> 0 || firstName.indexOf("^")> 0 || firstName.indexOf("&")> 0 || firstName.indexOf("*")> 0 || firstName.indexOf("(")> 0 || firstName.indexOf(")")> 0 || firstName.indexOf("_")> 0 || firstName.indexOf("-")> 0 || firstName.indexOf("=")> 0 || firstName.indexOf("+")> 0) {
+      alert ("First Name cannot contain special characters or numbers.");
+      return false;
+    }
+    return true;
+  }
+  
+  function validateLastName()
+  {
+    var lastName= document.logon.lastName.value;
+    if (lastName === null || lastName ===""){
+      alert ("Last Name cannot be blank");
+      return false; 
+    }
+    lastName = lastName.trim();
+    if (lastName.indexOf("0")> 0 || lastName.indexOf("1")> 0 || lastName.indexOf("2")> 0 || lastName.indexOf("3")> 0 || lastName.indexOf("4")> 0 || lastName.indexOf("5")> 0 || lastName.indexOf("6")> 0 || lastName.indexOf("7")> 0 || lastName.indexOf("8")> 0 || lastName.indexOf("9")> 0 || lastName.indexOf("!")> 0 || lastName.indexOf("@")> 0 || lastName.indexOf("#")> 0 || lastName.indexOf("$")> 0 || lastName.indexOf("$")> 0 || lastName.indexOf("%")> 0 || lastName.indexOf("^")> 0 || lastName.indexOf("&")> 0 || lastName.indexOf("*")> 0 || lastName.indexOf("(")> 0 || lastName.indexOf(")")> 0 || lastName.indexOf("_")> 0 || lastName.indexOf("-")> 0 || lastName.indexOf("=")> 0 || lastName.indexOf("+")> 0) {
+      alert ("Last Name cannot contain special characters or numbers.");
+      return false;
+    }
+    return true;
+  }
+  
+  function validatePassword()
+  {
+    var password1 = document.logon.password1.value;
+    var password2 = document.logon.password2.value;
+      //has at least 8 char
+    if (password1 == null || password1.length < 8) {
+      alert("Password must be at least 8 characters");
+      return false;
+    }
+   
+    if (password1.toLowerCase() === password1) {
+      alert("Password must contain at least one uppercase letter");
+      return false;
+    }
+  	
+    if (password1 !== password2) {
+      alert ("Passwords must match");
+      return false;
+    }
+  	
+    return true; 
+  }
+</script>
+<title>
+  GC Code Dojo
+</title>
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="http://www.grandcircus.co/">Grand Circus Home</a></li>
+  <li><a href="https://twitter.com/grantchirpus">About</a></li>
+</ul>
+<h1>
+  Grant Chirpus' Code Dojo
+</h1>
+<h2>
+  Available courses:
+</h2>
+
+ <table style="width:500px">
+  <tr>
+    <th>Course</th>
+    <th>Instructor</th>
+    <th>Course Number</th>
+  </tr>
+  <tr>
+    <td><a href="https://en.wikipedia.org/wiki/Java_(programming_language)"> Java </a></td>
+    <td>Peter Guenther</td>
+    <td>Java 201</td>
+  </tr>
+  <tr>
+    <td><a href="https://en.wikipedia.org/wiki/HTML">HTML</a></td>
+    <td>Maurice Tedder</td>
+    <td>HTML 101</td>
+  </tr>
+     <tr>
+    <td><a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a></td>
+    <td>Tricia Haslinger</td>
+    <td>JS 301</td>
+  </tr>
+     <tr>
+    <td><a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS</a></td>
+    <td>Kim Driscoll</td>
+    <td>CSS 101</td>
+  </tr>
+     <tr>
+    <td><a href="https://en.wikipedia.org/wiki/Java_Database_Connectivity">JDBC</a></td>
+    <td>Grant Chirpus</td>
+    <td>JDBC 401</td>
+  </tr>
+</table> 
+
+<br>
+<h3>
+  Please select a course:
+</h3>
+ <select name="class">
+  <option value="Java">Java</option>
+  <option value="HTML">HTML</option>
+  <option value="JavaScript">JavaScript</option>
+  <option value="CSS">CSS</option>
+  <option value="JDBC">JDBC</option>
+</select>
+<br>
+<br>
+<br>
+<form name="logon" id="logon" action="" method="post">
+  <label class="fieldLabel">First Name:
+    <input type="text" name="firstName" size="32" maxlength="25" placeholder="Leeroy" />
+  </label>
+    <label class="fieldLabel">Last Name:
+    <input type="text" name="lastName" size="32" maxlength="25" placeholder="Jenkins" />
+  </label>
+  <label class="fieldLabel">Member Email:
+    <input type="text" name="memberEmail" size="32" maxlength="30" placeholder="someone@somewhere.com" />      
+  </label>
+  <label class="fieldLabel">Password:
+    <input type="password" name="password1" size="12" maxlength="12">      
+  </label>
+    <label class="fieldLabel">Re-enter Password:
+    <input type="password" name="password2" size="12" maxlength="12">      
+  </label>
+  <label class="fieldLabel">Phone Number:
+    <input type="phone" name="phone1" size="12" maxlength="10">      
+  </label>
+  <div class="buttons">
+    <input type="submit" name="submit" onclick="return validateForm()" value="Create Account" />
+    <input type="reset" name="reset" value="Clear Form" />
+  </div>
+</form>
+  </body>
+</html>
